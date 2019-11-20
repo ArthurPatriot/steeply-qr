@@ -1,0 +1,148 @@
+body {
+    background-color: #1e1e2f !important;
+}
+
+h1 {
+    color: #eeeeee;
+}
+
+h3 {
+    text-align: center;
+    color: #eee;
+    margin-bottom: 25px;
+}
+
+ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
+  border-right-color: #1e1e2f !important;
+}
+
+.sqr-card {
+    color: #eeeeee;
+    padding: 15px;
+    background-color: #27293d;
+}
+
+.sqr-card--green {
+    background: linear-gradient(0deg,#389466,#42b883);
+}
+
+.sqr-container {
+    margin-top: 25px;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-transform: uppercase !important;
+}
+
+.sqr-grid-box {
+    padding: 15px;
+    background-color: #27293d;
+    color: #eeeeee;
+    border-radius: 5px;
+}
+
+.sqr-grid-box > p {
+    margin: 0;
+}
+
+.sqr-grid-box--green {
+    background: linear-gradient(0deg,#389466,#42b883) !important;
+}
+
+.sqr-sidebar {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+}
+
+.sqr-options {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.sqr-btn {
+    text-align: center;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 11px 40px;
+    border: none;
+    margin: 4px 1px;
+    border-radius: 5px;
+    background-color: #1d8cf8;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    transition: .3s;
+}
+
+.sqr-btn:hover {
+    background-color: #1d6ac8;
+}
+
+.sqr-sidebar__contact {
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: #27293d;
+    transition: .3s;
+}
+
+.sqr-alert {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sqr-alert--outline {
+    border: 1px solid #eee;
+    padding: 10px !important;
+}
+
+.sqr-alert--active {
+    border: 1px solid #42b883 !important;
+    color: #42b883 !important;
+}
+
+.sqr-alert--info {
+    background-image: linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3)!important;
+}
+
+.sqr-alert--danger {
+    background-image: linear-gradient(to bottom left,#ff8d72,#ff6491,#ff8d72)!important;
+}
+
+.sqr-mb-15 {
+    margin-bottom: 15px !important;
+}
+
+.sqr-mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.sqr-select {
+    background-color: #27293d !important;
+    border: 1px solid #eee !important;
+    width: 100% !important;
+    min-height: 40px !important;
+    color: #eee !important;
+}
+
+.form-table th, .form-wrap label {
+    color: #eee;
+}
+
+.sqr-shortcode {
+    text-align: center;
+}
+
+.sqr-link {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.sqr-link:hover {
+    color: #27293d;
+}
