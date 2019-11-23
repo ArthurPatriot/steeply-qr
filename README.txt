@@ -45,6 +45,9 @@ Use [sqr] shortcode.
 
 == Changelog ==
 
+= 1.0.4 =
+* Security Fixes
+
 = 1.0.3 =
 * pre-Release Version
 

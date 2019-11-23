@@ -85,8 +85,8 @@ class Steeply_Qr_Admin {
 
 	/**
 	 * Add Plugin Menu Page - SteeplyQR
-     *
-     * @since 1.0.1
+	 *
+	 * @since 1.0.1
 	 */
 	public function add_menu_page() {
 
@@ -95,8 +95,8 @@ class Steeply_Qr_Admin {
 	}
 
 	/**
-     * Display Menu Page - SteeplyQR
-     *
+	 * Display Menu Page - SteeplyQR
+	 *
 	 * @since 1.0.1
 	 */
 	public function display_menu_page() {
@@ -107,8 +107,8 @@ class Steeply_Qr_Admin {
 
 	/**
 	 * Register Options for Plugin
-     *
-     * @since 1.0.2
+	 *
+	 * @since 1.0.2
 	 */
 	public function options_menu_page() {
 
@@ -139,8 +139,8 @@ class Steeply_Qr_Admin {
 
 	/**
 	 * Register MetaBox with QR for Posts
-     *
-     * @since 1.0.1
+	 *
+	 * @since 1.0.1
 	 */
 	public function add_meta_box_qr() {
 
@@ -151,11 +151,12 @@ class Steeply_Qr_Admin {
 	}
 
 	/**
-     * Display QR MetaBox
-     *
-     * @since 1.0.1
+	 * Display QR MetaBox
+	 *
 	 * @param WP_Post $post
 	 * @param array $meta
+	 *
+	 * @since 1.0.1
 	 */
 	public function display_meta_box_qr( $post, $meta ) {
 
@@ -173,17 +174,20 @@ class Steeply_Qr_Admin {
 				<input <?= $is_generate_qr ?? '' ?> id="sqr-generate" type="checkbox" name="sqr-generate" value="checked">
 			</span>
             <label for="sqr-generate" style="vertical-align: baseline">Generate QR Code for this post</label>
-            <button type="button" id="sqr_regenerate_one" data-sqr_post_id="<?= $post->ID ?>" style="display:block;width:90%;margin-top:10px;padding:7px;border-radius:3px;" class="components-button is-primary">Regenerate QR</button>
+            <button type="button" id="sqr_regenerate_one" data-sqr_post_id="<?= $post->ID ?>" style="display:block;width:90%;margin-top:10px;padding:7px;border-radius:3px;"
+                    class="components-button is-primary">Regenerate QR
+            </button>
         </div>
 		<?php
 
 	}
 
 	/**
-     * Save MetaBox Data
-     *
-     * @since 1.0.1
+	 * Save MetaBox Data
+	 *
 	 * @param int $post_id
+	 *
+	 * @since 1.0.1
 	 */
 	public function save_meta_box_qr( $post_id ) {
 
@@ -210,11 +214,12 @@ class Steeply_Qr_Admin {
 	}
 
 	/**
-     * Generate QR Code using Google Charts API
-     *
-     * @link https://developers.google.com/chart/infographics/docs/qr_codes
-     *
-     * @since 1.0.0
+	 * Generate QR Code using Google Charts API
+	 *
+	 * @link https://developers.google.com/chart/infographics/docs/qr_codes
+	 *
+	 * @since 1.0.0
+	 *
 	 * @param int $post_id
 	 *
 	 * @return WP_Error|int
@@ -246,18 +251,18 @@ class Steeply_Qr_Admin {
 			return new WP_Error( 'sqr-generate-error', 'QR File Creation Error' );
 		}
 
-		update_post_meta( $post_id, 'sqr-image-url', "/wp-content/uploads/sqr/$post_id.png" );
+		update_post_meta( $post_id, 'sqr-image-url', WP_CONTENT_DIR . "/uploads/sqr/$post_id.png" );
 
 		return $post_id;
 
 	}
 
 	/**
-     * Check Exiting QRS Folder and is writable
-     *
-     * @link /wp-content/uploads/qrs/
-     *
-     * @since 1.0.1
+	 * Check Exiting QRS Folder and is writable
+	 *
+	 * @link /wp-content/uploads/qrs/
+	 *
+	 * @since 1.0.1
 	 * @return bool
 	 */
 	public static function qr_folder_check() {
@@ -273,10 +278,10 @@ class Steeply_Qr_Admin {
 	}
 
 	/**
-     * Get Post Types for QR Generation
-     *
-     * @since 1.0.1
+	 * Get Post Types for QR Generation
+	 *
 	 * @return array $post_types
+	 * @since 1.0.1
 	 */
 	public static function get_qr_post_types() {
 
@@ -290,8 +295,8 @@ class Steeply_Qr_Admin {
 
 	/**
 	 * AJAX Generate QR Codes for all Post Types
-     *
-     * @since 1.0.2
+	 *
+	 * @since 1.0.2
 	 */
 	public function sqr_generate_all() {
 
@@ -362,10 +367,11 @@ class Steeply_Qr_Admin {
 
 		if ( isset( $_GET ) and $_GET['sqr_post_id'] ) {
 
-		    Steeply_Qr_Admin::generate_qr_code( $_GET['sqr_post_id'] );
+		    $sqr_post_id = htmlspecialchars($_GET['sqr_post_id']);
 
-		    update_post_meta( $_GET['sqr_post_id'], 'sqr-generate', 'checked' );
+		    Steeply_Qr_Admin::generate_qr_code( $sqr_post_id );
 
+		    update_post_meta( $sqr_post_id, 'sqr-generate', 'checked' );
 
 			wp_send_json_success();
 
