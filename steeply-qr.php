@@ -16,7 +16,7 @@
  * Plugin Name:       Steeply QR
  * Plugin URI:        https://sqr.allsteeply.com
  * Description:       Generate QR Codes for your Posts, Pages and Custom Post Types.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Artur Khylskyi
  * Author URI:        https://allsteeply.com
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Currently plugin version.
  * SemVer - https://semver.org
  */
-define( 'STEEPLY_QR_VERSION', '1.0.4' );
+define( 'STEEPLY_QR_VERSION', '1.0.5' );
 
 /**
  * The code that runs during plugin activation.

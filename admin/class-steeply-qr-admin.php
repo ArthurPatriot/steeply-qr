@@ -251,7 +251,7 @@ class Steeply_Qr_Admin {
 			return new WP_Error( 'sqr-generate-error', 'QR File Creation Error' );
 		}
 
-		update_post_meta( $post_id, 'sqr-image-url', WP_CONTENT_DIR . "/uploads/sqr/$post_id.png" );
+		update_post_meta( $post_id, 'sqr-image-url', wp_get_upload_dir()['baseurl'] . "/sqr/$post_id.png" );
 
 		return $post_id;
 
